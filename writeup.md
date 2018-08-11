@@ -17,9 +17,10 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 [image1]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/train_distribution.png 
-[image2]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/valid_distribution.png "Validation Set Distribution"
-[image3]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/test_distribution.png "Test Set Distribution"
-
+[image2]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/valid_distribution.png
+[image3]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/test_distribution.png
+[image4]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/gray_scale.png
+[image5]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/contrast.png
 
 
 ## Rubric Points
@@ -30,8 +31,8 @@ The goals / steps of this project are the following:
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 See my [github](https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project)
-* writeup.md (https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup.md)
-* output.html (https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/output.html)
+* [writeup.md](https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup.md)
+* [output.html](https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/output.html)
 
 
 ### Data Set Summary & Exploration
@@ -60,30 +61,27 @@ See output.html, which includes:
   ![alt text][image2]
   
   * Test Set Distribution
+  
   ![alt text][image3]
 
 
 ### Design and Test a Model Architecture
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
-# TODO
-1. I decide to use RGB image because grayscale somehow gives me worst accuracy in testing set.
+* I tried to convert the images into grayscale using [perceptual luminance-preserving](https://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale). However, grascale images results in worst accuracy in validation and test data set, compared to RGB. So I decide **NOT** to use grayscale.
 
-Here is an example of a traffic sign image before and after grayscaling.
+  Here are the examples for grayscaled images:
+  ![alt text][image4]
 
-![alt text][image2]
+* I notice some images have low contrast, which cause dark images and might affect the training. I have tried different techniques to adjust their contrast by balancing the brightness distribution:
+  * [Histogram equalization](https://docs.opencv.org/3.1.0/d5/daf/tutorial_py_histogram_equalization.html)
+  * [CLAHE (Contrast Limited Adaptive Histogram Equalization)](https://docs.opencv.org/3.1.0/d5/daf/tutorial_py_histogram_equalization.html)
+  * [Gamma correction](https://en.wikipedia.org/wiki/Gamma_correction)
+  
+  I decide to use Gamma correction because it results in better training accuracy. The comparison for Gamma correction before and after:
+  ![alt text][image5]
 
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
+* In the last step, I do normalization to convert image range [0, 255] to [0, 1]
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
