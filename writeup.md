@@ -21,7 +21,7 @@ The goals / steps of this project are the following:
 [image3]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/test_distribution.png
 [image4]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/gray_scale.png
 [image5]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/contrast.png
-
+[image6]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/lenet.png
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -30,7 +30,7 @@ The goals / steps of this project are the following:
 ### Writeup / README
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
-See my [github](https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project)
+See my [github](https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project):
 * [writeup.md](https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup.md)
 * [output.html](https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/output.html)
 
@@ -85,21 +85,26 @@ See output.html, which includes:
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
-# TODO
-My final model consisted of the following layers:
+I use LeNet as bsical model and add additonal layers
+![alt text][image6]
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 5x5     	| 1x1 stride, valid padding, outputs 32x32x64 	|
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
+| Max pooling			| 2x2 stride, valid padding, outputs 28x28x6 	|
+| Convolution 5x5		| 1x1 stride, valid padding, outputs 24x24x16 	|
+| RELU 					|												|
+| Max pooling			| 2x2 stride, valid padding, outputs 28x28x16 	|
+| Fully connected		| 400x120										|
+| RELU 					|												|
+| Dropout 				| keep prob = 0.5								|
+| Fully connected		| 128x84										|
+| RELU 					|												|
+| Dropout 				| keep prob = 0.5								|
+| Fully connected		| 84x34											|
+| Softmax				| 												|
 
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
