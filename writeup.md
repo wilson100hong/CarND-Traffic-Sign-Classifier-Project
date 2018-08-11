@@ -29,6 +29,8 @@ The goals / steps of this project are the following:
 [image10]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/my-traffic-signs/31.png
 [image11]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/my-traffic-signs/38.png
 
+[image12]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/vis_1.png
+[image13]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/vis_2.png
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -142,41 +144,86 @@ Here are five German traffic signs picked form the total 12 images I tried::
 ![alt text][image7] ![alt text][image8] ![alt text][image9] 
 ![alt text][image10] ![alt text][image11]
 
-The first image might be difficult to classify because ...
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
-# TODO
+
 Here are the results of the prediction:
 
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Image										| Prediction									| 
+|:-----------------------------------------:|:---------------------------------------------:| 
+| Right-of-way at the next intersection		| Right-of-way at the next intersection			| 
+| Priority road								| Priority road									|
+| Road narrows on the right					| Road narrows on the right						|
+| Wild animals crossing						| Wild animals crossing			 				|
+| Keep right								| Keep right									|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess all the images.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
-# TODO
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+* Right-of-way at the next intersection
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| 1.00         			| Right-of-way at the next intersection			| 
+| .00     				| Double curve 									|
+| .00					| Beware of ice/snow							|
+| .00	      			| Speed limit (100km/h)					 		|
+| .00				    | Pedestrians     								|
+
+* Priority road	
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.00         			| Priority road									| 
+| .00     				| Traffic signals 								|
+| .00					| Speed limit (20km/h)							|
+| .00	      			| Speed limit (30km/h)					 		|
+| .00				    | Speed limit (50km/h)     						|
 
 
-For the second image ... 
+* Road narrows on the right
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.00         			| Road narrows on the right						|
+| .00     				| Bicycles crossing 							|
+| .00					| Road work										|
+| .00	      			| Double curve					 				|
+| .00				    | Dangerous curve to the left    				|
+
+* Wild animals crossing
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.00         			| Wild animals crossing							| 
+| .00     				| Road work 									|
+| .00					| Slippery road									|
+| .00	      			| No passing for vehicles over 3.5 metric tons	|
+| .00				    | Bicycles crossing    							|
+
+
+* Keep right
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.00         			| Keep right									| 
+| .00     				| Turn left ahead 								|
+| .00					| Speed limit (20km/h)							|
+| .00	      			| Speed limit (30km/h)					 		|
+| .00				    | Speed limit (50km/h)    						|
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
-# TODO
+* First layer
+
+  Recognize the contour (ciricle), and the inner stipe
+
+![alt text][image12]
+
+* Second layer
+
+
+![alt text][image13]
 
