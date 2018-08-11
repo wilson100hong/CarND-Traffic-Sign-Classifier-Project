@@ -16,8 +16,7 @@ The goals / steps of this project are the following:
 
 
 [//]: # (Image References)
-# TODO
-[image1]: ./writeup_images/train_distribution.jpg "Training Set Distribution"
+[image1]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/train_distribution.png "Training Set Distribution"
 [image2]: ./writeup_images/valid_distribution.jpg "Validation Set Distribution"
 [image3]: ./writeup_images/test_distribution.jpg "Test Set Distribution"
 
