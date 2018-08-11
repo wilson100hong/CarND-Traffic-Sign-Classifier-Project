@@ -140,6 +140,7 @@ If an iterative approach was chosen:
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 Here are five German traffic signs picked form the total 12 images I tried::
+(See output.html for more images and better visualization result)
 
 ![alt text][image7] ![alt text][image8] ![alt text][image9] 
 ![alt text][image10] ![alt text][image11]
