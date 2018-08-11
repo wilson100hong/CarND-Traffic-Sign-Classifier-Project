@@ -52,10 +52,13 @@ signs data set:
 See output.html, which includes:
 * 3 sample images for each traffic signs.
 * Distribution (count) for each signs in different dataset:
-  * Training Set Distribution 
+  * Training Set Distribution
+  
   ![alt text][image1]
   * Validation Set Distribution
+  
   ![alt text][image2]
+  
   * Test Set Distribution
   ![alt text][image3]
 
