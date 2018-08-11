@@ -16,9 +16,9 @@ The goals / steps of this project are the following:
 
 
 [//]: # (Image References)
-[image1]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/train_distribution.png "Training Set Distribution"
-[image2]: ./writeup_images/valid_distribution.jpg "Validation Set Distribution"
-[image3]: ./writeup_images/test_distribution.jpg "Test Set Distribution"
+[image1]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/train_distribution.png 
+[image2]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/valid_distribution.png "Validation Set Distribution"
+[image3]: https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_images/test_distribution.png "Test Set Distribution"
 
 
 
@@ -50,9 +50,12 @@ signs data set:
 
 See output.html, which includes:
 * 3 sample images for each traffic signs.
-* Distribution (count) for each signs in training, validation and test data set:
+* Distribution (count) for each signs in different dataset:
+** Training Set Distribution
 ![alt text][image1]
+** Validation Set Distribution
 ![alt text][image2]
+** Test Set Distribution
 ![alt text][image3]
 
 
