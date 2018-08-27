@@ -40,7 +40,7 @@ The goals / steps of this project are the following:
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 See my [github](https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project):
-* [writeup.md](https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup.md)
+* [README.md](https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup.md)
 * [output.html](https://github.com/wilson100hong/CarND-Traffic-Sign-Classifier-Project/blob/master/output.html)
 
 
